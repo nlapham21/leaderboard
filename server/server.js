@@ -7,6 +7,10 @@ const port = process.env.PORT || 3000;
 
 app.use(express.static(publicPath));
 
+app.get('/api/test', (req, res) => { // match all un-matched routes
+    res.json({ test: 'test' });
+});
+
 app.get('*', (req, res) => { // match all un-matched routes
     res.sendFile(path.join(publicPath, 'index.html'));
 });

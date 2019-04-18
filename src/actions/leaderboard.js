@@ -21,7 +21,7 @@ export const startSetLeaderboard = () => {
 
 // EDIT_LEADER
 export const editLeader = (name, rank) => ({
-    type: 'EDIT_EXPENSE',
+    type: 'EDIT_LEADERBOARD',
     name,
     rank,
 });

@@ -15,8 +15,15 @@ exports[`should render Header correctly 1`] = `
         replace={false}
         to="/dashboard"
       >
-        <h1>
+        <h1
+          className="show-for-desktop"
+        >
           Ping Pong Leaderboard
+        </h1>
+        <h1
+          className="show-for-mobile"
+        >
+          Leaderboard
         </h1>
       </Link>
       <button
