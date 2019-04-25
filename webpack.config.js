@@ -67,6 +67,10 @@ module.exports = (env) => {
             contentBase: path.join(__dirname, 'public'),
             historyApiFallback: true, // Client side routing
             publicPath: '/dist/',
+            open: true,
+            proxy: {
+                '/api': 'http://localhost:3000',
+            },
         },
     };
 };
