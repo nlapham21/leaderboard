@@ -26,7 +26,7 @@ export class EditLeaderPage extends React.Component {
             </div>
         );
     }
-};
+}
 
 const mapStateToProps = (state, props) => ({
     leader: state.leaders.filter(leader => leader.rank == props.match.params.rank)[0],

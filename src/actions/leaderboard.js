@@ -21,7 +21,7 @@ export const startSetLeaderboard = () => {
 
 // EDIT_LEADER
 export const editLeader = (name, rank) => ({
-    type: 'EDIT_LEADERBOARD',
+    type: 'EDIT_LEADER',
     name,
     rank,
 });
@@ -36,6 +36,20 @@ export const startEditLeader = (name, rank) => {
         });
         return database.ref('leaders').set(leaders).then(() => {
             dispatch(editLeader(name, rank));
+        });
+    };
+};
+
+// EDIT_LEADERS
+export const editLeaders = leaders => ({
+    type: 'EDIT_LEADERS',
+    leaders,
+});
+
+export const startEditLeaders = (leaders) => {
+    return (dispatch, getState) => {
+        return database.ref('leaders').set(leaders).then(() => {
+            dispatch(editLeaders(leaders));
         });
     };
 };

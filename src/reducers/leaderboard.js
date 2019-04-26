@@ -6,7 +6,7 @@ export default (state = leaderboardReducerDefaultState, action) => {
     switch (action.type) {
     case 'SET_LEADERBOARD':
         return action.leaders;
-    case 'EDIT_LEADERBOARD':
+    case 'EDIT_LEADER':
         return state.map((leader) => {
             if (leader.rank === action.rank) {
                 return {
@@ -16,6 +16,8 @@ export default (state = leaderboardReducerDefaultState, action) => {
             }
             return leader;
         });
+    case 'EDIT_LEADERS':
+        return action.leaders;
     default:
         return state;
     }
